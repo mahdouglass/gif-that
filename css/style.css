@@ -3,9 +3,15 @@ body {
 }
 
 h1 {
+    font-family: "Permanent Market", cursive;
+    font-weight: bold;
     padding: 25px 0;
 }
 
 .text-centered {
     text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
