@@ -8,9 +8,9 @@ for(var i = 0; i < topics.length; i++) {
     var element = document.getElementById("gif-buttons")
     element.appendChild(button);
 }
-
-var xhr = $.get("https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=ICPdxSFFdZlkvUdwAnEaJyosRmdukebU&limit=5");
-xhr.done(
+var apiKey = "ICPdxSFFdZlkvUdwAnEaJyosRmdukebU";
+var queryUrl = $.get("https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=" + apiKey+ "&limit=10");
+queryUrl.done(
     function(data) { 
         console.log("success got data", data); 
     }
