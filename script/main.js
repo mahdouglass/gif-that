@@ -25,7 +25,7 @@ $.ajax({
         var gifContainer = $("<div class='gif'>");
         
         // Create an element to hold the image //
-        var gifImage = $("<img class='image'>");
+        var gifImage = $("<img>");
 
         let results = result.data;
 
