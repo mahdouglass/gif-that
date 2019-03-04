@@ -9,9 +9,9 @@ for(var i = 0; i < topics.length; i++) {
     element.appendChild(button);
 }
 var apiKey = "ICPdxSFFdZlkvUdwAnEaJyosRmdukebU";
-var queryUrl = $.get("https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=" + apiKey+ "&limit=10");
-queryUrl.done(
-    function(data) { 
-        console.log("success got data", data); 
-    }
-);
+var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=" + apiKey + "&limit=10";
+
+$.ajax({
+    url: queryUrl,
+    method: "GET"
+})
