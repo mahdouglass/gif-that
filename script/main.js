@@ -16,11 +16,11 @@ $.ajax({
     url: queryUrl,
     method: "GET"
 }).then(function(result) {
-    let {data, meta} = result;
+    let data = result;
 
     // Loop through each result item //
     for (var i = 0; i < result.data.length; i++) {
-
+        // JSON data array
         let results = result.data;
             
         // Create a div to hold the gif //
@@ -29,9 +29,10 @@ $.ajax({
         // Create an element to hold the image //
         var gifImage = $("<img>");
 
+        // Add still gif/image source 
         gifImage.attr("src", results[i].images.fixed_height_still.url);
 
-        // Display the image //
+        // Add the gif to the view //
         gifContainer.append(gifImage);
 
         // Putting the gifs at the beginning //
