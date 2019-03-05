@@ -20,21 +20,21 @@ $.ajax({
 
     // Loop through each result item //
     for (var i = 0; i < result.data.length; i++) {
+
+        let results = result.data;
             
-        // Create a div to hold the sitcom //
+        // Create a div to hold the gif //
         var gifContainer = $("<div class='gif'>");
         
         // Create an element to hold the image //
         var gifImage = $("<img>");
-
-        let results = result.data;
 
         gifImage.attr("src", results[i].images.fixed_height_still.url);
 
         // Display the image //
         gifContainer.append(gifImage);
 
-        // Putting the entire sitcom above the previous sitcoms //
+        // Putting the gifs at the beginning //
         $("#display-gifs").prepend(gifContainer);
     }
 });

@@ -31,6 +31,7 @@ h1 {
 .gif {
     max-width: 300px;
     display: inline-block;
+    margin: 10px;
 }
 
 img {
