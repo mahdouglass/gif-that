@@ -32,8 +32,13 @@ $.ajax({
         // Add still gif/image source 
         gifImage.attr("src", results[i].images.fixed_height_still.url);
 
+        var gifRating = results.Rated;
+
+        var ratingText = $("<p>").text("Rating: " + results[i].gifRating);
+
         // Add the gif to the view //
         gifContainer.append(gifImage);
+        gifContainer.append(ratingText);
 
         // Putting the gifs at the beginning //
         $("#display-gifs").prepend(gifContainer);
