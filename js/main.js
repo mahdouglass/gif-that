@@ -17,6 +17,7 @@ $.ajax({
     method: "GET"
 }).then(function(result) {
     let data = result;
+    console.log(result);
 
     // Loop through each result item //
     for (var i = 0; i < result.data.length; i++) {
@@ -32,9 +33,9 @@ $.ajax({
         // Add still gif/image source 
         gifImage.attr("src", results[i].images.fixed_height_still.url);
 
-        var gifRating = results.Rated;
+        var gifRating = results[i].rating;
 
-        var ratingText = $("<p>").text("Rating: " + results[i].gifRating);
+        var ratingText = $("<p>").text("Rating: " + gifRating);
 
         // Add the gif to the view //
         gifContainer.append(gifImage);
