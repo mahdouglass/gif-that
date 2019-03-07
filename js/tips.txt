@@ -1,0 +1,9 @@
+Keep learning. A lot of online tutorials (like treehouse) have a "tweet your progress" button after lessons. Use it.
+
+Do a daily code challenge. Tweet about them. I like HackerRank. Codin Game is fun too. I think they all are a little uncomfortable to get started with. Even the easier challenges have confusing boilerplate for the entry level dev. Good thing you've got a friendly bunch here to answer some questions. ;)
+
+Light up GitHub. Commit. Commit. Commit. Don't feel dumb about small projects. Refactor your magic 8 ball challenge, write an example of OOP in JavaScript without using the `class` keyword, turn your favorite board game/card game into a web app, etc.
+
+Blog.
+
+TLDR: prove that you're passionate.

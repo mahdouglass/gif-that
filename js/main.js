@@ -31,11 +31,9 @@ $.ajax({
         var gifImage = $("<img>");
 
         // Add still gif/image source 
-        gifImage.attr("src", results[i].images.fixed_height_still.url);
+        gifImage.attr("src", results[i].images.fixed_height.url);
 
-        var gifRating = results[i].rating;
-
-        var ratingText = $("<p>").text("Rating: " + gifRating);
+        var ratingText = $("<p>").text("Rating: " + results[i].rating);
 
         // Add the gif to the view //
         gifContainer.append(gifImage);
