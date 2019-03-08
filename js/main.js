@@ -46,17 +46,17 @@ $.ajax({
     }
 });
 
-$("#display-gifs").on("click", ".gif", function() {
+$("#display-gifs").on("click", ".gif img", function() {
     // Click toggling between static and animated
     var src = $(this).attr("src");
-    if($(".image").hasClass("animate")){
+    if($(this).hasClass("animate")){
         // Replacing image path with static path and removing .animate
-        $(".image").attr("src", src.replace(/\.gif/i, "_s.gif"))
-        $(".image").removeClass("animate");
+        $(this).attr("src", src.replace(/\.gif/i, "_s.gif"))
+        $(this).removeClass("animate");
     } else {
         // Add .animate and replacing image with gif path
-        $(".image").addClass("animate");
-        $(".image").attr("src", src.replace(/\_s.gif/i, ".gif"))
+        $(this).addClass("animate");
+        $(this).attr("src", src.replace(/\_s.gif/i, ".gif"))
     }
 });
 
