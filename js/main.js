@@ -33,7 +33,7 @@ $.ajax({
         var gifImage = $("<img>");
 
         // Add still gif/image source 
-        gifImage.attr("src", results[i].images.fixed_height.url);
+        gifImage.attr("src", results[i].images.fixed_height_still.url);
 
         var ratingText = $("<p>").text("Rating: " + results[i].rating);
 
@@ -43,6 +43,20 @@ $.ajax({
 
         // Putting the gifs at the beginning //
         $("#display-gifs").prepend(gifContainer);
+    }
+});
+
+$("#display-gifs").on("click", ".gif", function() {
+    // Click toggling between static and animated
+    var src = $(this).attr("src");
+    if($(".image").hasClass("animate")){
+        // Replacing image path with static path and removing .animate
+        $(".image").attr("src", src.replace(/\.gif/i, "_s.gif"))
+        $(".image").removeClass("animate");
+    } else {
+        // Add .animate and replacing image with gif path
+        $(".image").addClass("animate");
+        $(".image").attr("src", src.replace(/\_s.gif/i, ".gif"))
     }
 });
 
