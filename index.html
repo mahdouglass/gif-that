@@ -13,9 +13,21 @@
     <div class="container-fluid">
         <h1 class="text-centered uppercase">Gif That</h1>
         <div class="row">
-            <div id="display-gifs" class="col-md-10"></div>
-            <div id="gif-buttons" class="col-md-2">
+            <div class="col-md-2">
+                <form>
+                    <label>Enter TV show character</label>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input type="text" name="gif-topic" />
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="gif-buttons"></div>
             </div>
+            <div id="display-gifs" class="col-md-10"></div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
