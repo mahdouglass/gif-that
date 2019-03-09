@@ -49,7 +49,7 @@ $.ajax({
     }
 });
 
-//Pause and play gifs
+// Pause and play gifs
 $("#display-gifs").on("click", ".gif img", function() {
     // Click toggling between static and animated
     var src = $(this).attr("src");
@@ -64,5 +64,12 @@ $("#display-gifs").on("click", ".gif img", function() {
     }
 });
 
-//Call topicsButtons function to populate buttons
+// Make button out of input value
+$("button#enter-value").click(function() {
+    var inputValue = $("input").val();
+    console.log(inputValue);
+    $("input").val("");
+});
+
+// Call topicsButtons function to populate buttons
 topicsButtons();
