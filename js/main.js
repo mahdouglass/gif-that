@@ -1,3 +1,4 @@
+// Array that will show as buttons on the site
 let topics = ['Leslie Knope', 'Liz Lemon', 'April Ludgate', 'Nick Offerman', 'Michael Scott'];
 
 // Run through topics array and create a button for each element
@@ -11,6 +12,7 @@ function topicsButtons() {
     }
 }
 
+// Connect to api and get data
 var apiKey = "ICPdxSFFdZlkvUdwAnEaJyosRmdukebU";
 var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=" + apiKey + "&limit=10";
 
@@ -35,17 +37,19 @@ $.ajax({
         // Add still gif/image source 
         gifImage.attr("src", results[i].images.fixed_height_still.url);
 
-        var ratingText = $("<p>").text("Rating: " + results[i].rating);
+        // Add gif rating
+        // var ratingText = $("<p>").text("Caption: " + results[i].rating);
 
         // Add the gif to the view //
         gifContainer.append(gifImage);
-        gifContainer.append(ratingText);
+        // gifContainer.append(ratingText);
 
         // Putting the gifs at the beginning //
         $("#display-gifs").prepend(gifContainer);
     }
 });
 
+//Pause and play gifs
 $("#display-gifs").on("click", ".gif img", function() {
     // Click toggling between static and animated
     var src = $(this).attr("src");
