@@ -3,6 +3,7 @@ let topics = ['Leslie Knope', 'Liz Lemon', 'April Ludgate', 'Nick Offerman', 'Mi
 
 // Run through topics array and create a button for each element
 function topicsButtons() {
+    // Clear all buttons before rendering them
     $("#gif-buttons").empty();
     for(var i = 0; i < topics.length; i++) {
         var button = document.createElement("button");
@@ -67,10 +68,19 @@ $("#display-gifs").on("click", ".gif img", function() {
 
 // Make button out of input value
 $("button#enter-value").click(function(event) {
+    // Prevent button click from refreshing the page
     event.preventDefault();
+
+    // Assign value from input to variable
     var inputValue = $("input").val();
+    
+    // Add input value to the topics array
     topics.push(inputValue);
+
+    // Run topics buttons function to recreate array and buttons
     topicsButtons();
+
+    //Clear input field of text
     $("input").val("");
 });
 
