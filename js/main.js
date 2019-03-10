@@ -3,7 +3,7 @@ let topics = ['Leslie Knope', 'Liz Lemon', 'April Ludgate', 'Nick Offerman', 'Mi
 
 // Run through topics array and create a button for each element
 function topicsButtons() {
-    $("#display-gifs").empty();
+    $("#gif-buttons").empty();
     for(var i = 0; i < topics.length; i++) {
         var button = document.createElement("button");
         var text = document.createTextNode(topics[i]);
