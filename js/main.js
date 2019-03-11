@@ -6,11 +6,9 @@ function topicsButtons() {
     // Clear all buttons before rendering them
     $("#gif-buttons").empty();
     for(var i = 0; i < topics.length; i++) {
-        var button = document.createElement("button");
-        var text = document.createTextNode(topics[i]);
-        button.appendChild(text);
-        var element = document.getElementById("gif-buttons")
-        element.appendChild(button);
+        var gifButton = $("<button class='gif-btn'>");
+        gifButton.text(topics[i]);
+        $("#gif-buttons").append(gifButton);
     }
 }
 
