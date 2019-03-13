@@ -12,10 +12,13 @@ function topicsButtons() {
     }
 }
 
-function displayGifs() {
+$(document).click(".gif-btn", function() {
+    var gifSelected = $(this).text();
+    console.log(gifSelected);
+
     // Connect to api and get data
     var apiKey = "ICPdxSFFdZlkvUdwAnEaJyosRmdukebU";
-    var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=" + apiKey + "&limit=10";
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + gifSelected + "&api_key=" + apiKey + "&limit=10";
 
     $.ajax({
         url: queryUrl,
@@ -50,7 +53,7 @@ function displayGifs() {
             $("#display-gifs").prepend(gifContainer);
         }
     });
-}
+});
 
 // Pause and play gifs
 $("#display-gifs").on("click", ".gif img", function() {
@@ -85,7 +88,7 @@ $("button#enter-value").click(function(event) {
     $("input").val("");
 });
 
-$(document).click(".gif-btn", displayGifs);
+// $(document).click(".gif-btn", displayGifs);
 
 // Call topicsButtons function to populate buttons
 topicsButtons();
