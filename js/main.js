@@ -12,10 +12,9 @@ function topicsButtons() {
     }
 }
 
-$(document).click(".gif-btn", function() {
+$(document).on("click", ".gif-btn", function() {
+    // Grab name from button
     var gifSelected = $(this).text();
-    console.log(gifSelected);
-
     // Connect to api and get data
     var apiKey = "ICPdxSFFdZlkvUdwAnEaJyosRmdukebU";
     var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + gifSelected + "&api_key=" + apiKey + "&limit=10";
