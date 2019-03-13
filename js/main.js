@@ -22,7 +22,8 @@ function displayGifs() {
         method: "GET"
     }).then(function(result) {
         let data = result;
-        console.log(result);
+        // Clear all gifs each time a button is clicked, don't want to append for days
+        $("#display-gifs").empty();
 
         // Loop through each result item //
         for (var i = 0; i < result.data.length; i++) {
