@@ -13,6 +13,7 @@ function topicsButtons() {
 }
 
 $(document).on("click", ".gif-btn", function() {
+    $("#display-gifs").empty();
     // Grab name from button
     var gifSelected = $(this).text();
     // Connect to api and get data
@@ -86,8 +87,6 @@ $("button#enter-value").click(function(event) {
     //Clear input field of text
     $("input").val("");
 });
-
-// $(document).click(".gif-btn", displayGifs);
 
 // Call topicsButtons function to populate buttons
 topicsButtons();
