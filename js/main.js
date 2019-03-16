@@ -5,9 +5,13 @@ let topics = ['Leslie Knope', 'Liz Lemon', 'April Ludgate', 'Nick Offerman', 'Mi
 function topicsButtons() {
     // Clear all buttons before rendering them
     $("#gif-buttons").empty();
+    // Loop through topics array and create button for each inde
     for(var i = 0; i < topics.length; i++) {
+        // Create button html
         var gifButton = $("<button class='gif-btn'>");
+        // Add text to button
         gifButton.text(topics[i]);
+        // Add button to #gif-buttons element at the end
         $("#gif-buttons").append(gifButton);
     }
 }
@@ -18,6 +22,7 @@ $(document).on("click", ".gif-btn", function() {
     var gifSelected = $(this).text();
     // Connect to api and get data
     var apiKey = "ICPdxSFFdZlkvUdwAnEaJyosRmdukebU";
+    // Giphy URL broken into multiple variables for easier reading and updating
     var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + gifSelected + "&api_key=" + apiKey + "&limit=10";
 
     $.ajax({
@@ -27,28 +32,18 @@ $(document).on("click", ".gif-btn", function() {
         let data = result;
         // Clear all gifs each time a button is clicked, don't want to append for days
         $("#display-gifs").empty();
-
-        // Loop through each result item //
+        // Loop through each result item
         for (var i = 0; i < result.data.length; i++) {
             // JSON data array
             let results = result.data;
-                
-            // Create a div to hold the gif //
+            // Create a div to hold the gif
             var gifContainer = $("<div class='gif'>");
-            
-            // Create an element to hold the image //
+            // Create an element to hold the image
             var gifImage = $("<img>");
-
             // Add still gif/image source 
             gifImage.attr("src", results[i].images.fixed_height_still.url);
-
-            // Add gif rating
-            // var ratingText = $("<p>").text("Caption: " + results[i].rating);
-
-            // Add the gif to the view //
+            // Add the gif to the view
             gifContainer.append(gifImage);
-            // gifContainer.append(ratingText);
-
             // Putting the gifs at the beginning //
             $("#display-gifs").prepend(gifContainer);
         }
@@ -74,16 +69,12 @@ $("#display-gifs").on("click", ".gif img", function() {
 $("button#enter-value").click(function(event) {
     // Prevent button click from refreshing the page
     event.preventDefault();
-
     // Assign value from input to variable
     var inputValue = $("input").val();
-    
     // Add input value to the topics array
     topics.push(inputValue);
-
     // Run topics buttons function to recreate array and buttons
     topicsButtons();
-
     //Clear input field of text
     $("input").val("");
 });
